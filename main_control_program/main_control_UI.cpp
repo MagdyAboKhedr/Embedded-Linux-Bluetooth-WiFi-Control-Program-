@@ -39,7 +39,4 @@ void main_UI()
             std::cout << "DEF";
         }
     }
-
-    
-
 }

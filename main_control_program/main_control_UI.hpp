@@ -4,6 +4,7 @@
 
 int var;
 
+
 namespace choices{
 
     enum main_ch {

@@ -1,9 +1,12 @@
-#include <iostream>
+#include <cstdlib>
 #include "wifi_module.hpp"
 
 
 void wifi_manager()
 {
+    do{
+
+    
     std::cout << "WiFi Control Program" << std::endl;
     std::cout << "--------------------" << std::endl;
     std::cout << "1. Display WiFi Status" << std::endl;
@@ -19,13 +22,13 @@ void wifi_manager()
     std::cin >> choice;
     switch (choice) {
         case choices_wifi::DIS:
-            std::cout << "Display Wi-Fi status\n";
+            check_wifi();
             break;
         case choices_wifi::ON:
-            std::cout << "Turn Wi-Fi ON\n";
+            wifiON();
             break;
         case choices_wifi::OFF:
-            std::cout << "Turn Wi-Fi OFF\n";
+            wifiOFF();
             break;
         case choices_wifi::CON:
             std::cout << "Connect to Wi-Fi\n";
@@ -46,4 +49,23 @@ void wifi_manager()
             std::cout << "Invalid choice\n";
             break;
     }
+    }while(choice!=choices_wifi::BCK);
+}
+
+
+void check_wifi()
+{
+    system("nmcli radio wifi");
+    
+}
+
+void wifiON()
+{
+    system("nmcli r wifi on");
+    
+}
+
+void wifiOFF()
+{
+    system("nmcli r wifi off");
 }
