@@ -19,9 +19,6 @@ namespace choices_wifi{
     };
 }
 
-std::string execCommand(const char* cmd);
-
-
 void wifi_manager();
 
 void check_wifi();

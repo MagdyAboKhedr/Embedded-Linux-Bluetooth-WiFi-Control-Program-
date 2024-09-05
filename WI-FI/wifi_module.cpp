@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include "wifi_module.hpp"
+#include "../main_control_program/main_control_UI.hpp"
 
 
 void wifi_manager()
@@ -43,7 +44,7 @@ void wifi_manager()
             std::cout << "Search for Wi-Fi networks\n";
             break;
         case choices_wifi::BCK:
-            std::cout << "Go back to the previous menu\n";
+            main_UI();
             break;
         default:
             std::cout << "Invalid choice\n";
